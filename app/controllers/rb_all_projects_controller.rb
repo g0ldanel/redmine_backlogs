@@ -1,7 +1,7 @@
 class RbAllProjectsController < ApplicationController
   unloadable
 
-  before_filter :authorize_global
+  before_action :authorize_global
 
   def statistics
     @projects = EnabledModule.find(:all,

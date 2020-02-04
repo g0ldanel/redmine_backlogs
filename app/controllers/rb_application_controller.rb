@@ -2,7 +2,9 @@
 class RbApplicationController < ApplicationController
   unloadable
 
-  before_filter :load_project, :authorize, :check_if_plugin_is_configured
+  before_action :load_project
+  before_action :authorize
+  before_action :check_if_plugin_is_configured
 
   private
 

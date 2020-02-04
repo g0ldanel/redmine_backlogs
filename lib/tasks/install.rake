@@ -54,12 +54,12 @@ namespace :redmine do
         Backlogs.setting[:card_spec] = BacklogsPrintableCards::CardPageLayout.available[0]
       end
 
-      trackers = Tracker.find(:all)
+      trackers = Tracker.all
 
       if ENV['story_trackers'] && ENV['story_trackers'] != ''
         trackers =  ENV['story_trackers'].split(',')
         trackers.each{|name|
-          if ! Tracker.find(:first, :conditions => ["name=?", name])
+          if ! Tracker.where(name: name).first
             puts "Creating story tracker '#{name}'"
             tracker = Tracker.new(:name => name)
             tracker.save!
@@ -187,7 +187,7 @@ namespace :redmine do
         print "Please type the tracker's name: "
         STDOUT.flush
         name = STDIN.gets.chomp!
-        if Tracker.find(:first, :conditions => "name='#{name}'")
+        if Tracker.where(name: name).first
           puts "Ooops! That name is already taken."
           next
         end
@@ -197,6 +197,7 @@ namespace :redmine do
         if (STDIN.gets.chomp!).match("y")
           tracker = Tracker.new(:name => name)
           tracker.save!
+          print "was it here?"
           repeat = false
         end
       end

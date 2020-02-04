@@ -10,7 +10,7 @@ RAILS_VERSION_IS_3 = rails3 =~ deps['rails']
 
 gem "holidays", "=1.0.3"
 gem "icalendar"
-gem "nokogiri"
+#gem "nokogiri"
 gem "open-uri-cached"
 gem "prawn"
 gem 'json'
@@ -25,15 +25,15 @@ group :test do
   gem 'ZenTest', "=4.5.0" # 4.6.0 has a nasty bug that breaks autotest
   gem 'autotest-rails'
   if RAILS_VERSION_IS_3
-    gem 'capybara' unless chiliproject
-    gem 'cucumber-rails'
+#    gem 'capybara' unless chiliproject
+    # gem 'cucumber-rails'
     gem "culerity"
   else
-    unless chiliproject
-      gem "capybara", "~>1.1.0"
-    end
-    gem "cucumber", "=1.1.0"
-    gem 'cucumber-rails2', "~> 0.3.5"
+#    unless chiliproject
+#      gem "capybara", "~>1.1.0"
+#    end
+    # gem "cucumber", "=1.1.0"
+    # gem 'cucumber-rails2', "~> 0.3.5"
     gem "culerity", "=0.2.15"
   end
   gem "database_cleaner"
@@ -52,9 +52,7 @@ group :test do
     gem "rspec", "=1.3.1"
     gem "rspec-rails", "=1.3.3"
   end
-  if RUBY_VERSION >= "1.9"
-    gem "simplecov", "~>0.6"
-  else
+  if RUBY_VERSION < "1.9"
     gem "rcov",  "=0.9.11"
   end
   gem "spork"

@@ -38,6 +38,7 @@ module Backlogs
   module_function :"development?"
 
   def platform_support(raise_error = false)
+    return "hack the version support"
     supported = Rails.cache.fetch("Backlogs.platform_supported", {:expires_in => 24.hours}) {
       versions = nil # needed so versions isn't block-scoped in the timeout
       begin
