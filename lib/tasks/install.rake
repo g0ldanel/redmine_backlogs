@@ -108,7 +108,7 @@ namespace :redmine do
       if ENV['task_tracker'] && ENV['task_tracker'] != ''
         if ! Tracker.find(:first, :conditions => ["name=?", ENV['task_tracker']])
           puts "Creating task tracker '#{ENV['task_tracker']}'"
-          tracker = Tracker.new(:name => ENV['task_tracker'])
+          tracker = Tracker.new(:name => ENV['task_tracker'], default_status: 1)
           tracker.save!
         end
         Backlogs.setting[:task_tracker] = Tracker.find_by_name(ENV['task_tracker']).id
@@ -195,7 +195,7 @@ namespace :redmine do
         STDOUT.flush
 
         if (STDIN.gets.chomp!).match("y")
-          tracker = Tracker.new(:name => name)
+          tracker = Tracker.new(:name => name, default_status_id: 1)
           tracker.save!
           print "was it here?"
           repeat = false
