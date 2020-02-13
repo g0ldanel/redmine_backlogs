@@ -17,7 +17,7 @@ es:
     sprints
   backlogs_statistics_committed_velocity_stable_failed: Committed velocity is not
     stable across sprints
-  backlogs_statistics_hours_per_point: ! '%{value} hours per point on average'
+  backlogs_statistics_hours_per_point: ! '#{value} hours per point on average'
   backlogs_statistics_product_backlog_filled: Backlog del producto tiene historias
   backlogs_statistics_product_backlog_filled_failed: Backlog del producto está vacío
   backlogs_statistics_product_backlog_sized: The stories at the top of the product
@@ -26,13 +26,13 @@ es:
     has unsized stories
   backlogs_statistics_sizing_consistent: Story sizes are stable against their estimates
   backlogs_statistics_sizing_consistent_failed: Story sizes vary against their estimates
-  backlogs_statistics_sizing_stddev: ! 'Desviación estándar en horas vs. puntos: %{value}
+  backlogs_statistics_sizing_stddev: ! 'Desviación estándar en horas vs. puntos: #{value}
     horas'
   backlogs_statistics_sprint_notes_available: Recently closed sprints have retrospective/review
     notes
   backlogs_statistics_sprint_notes_available_failed: Closed sprints without retrospective/review
     notes
-  backlogs_statistics_sprints: Measured over %{value} sprints
+  backlogs_statistics_sprints: "Measured over #{value} sprints"
   backlogs_statistics_sprints_estimated: Active and recently closed sprint have task
     estimates
   backlogs_statistics_sprints_estimated_failed: Closed or active sprints with unestimated
@@ -40,8 +40,8 @@ es:
   backlogs_statistics_sprints_sized: Active and recently closed sprints were sized
   backlogs_statistics_sprints_sized_failed: Project has stories on active or recently
     closed sprints that were not sized
-  backlogs_statistics_velocity: ! 'Velocity: %{value}'
-  backlogs_statistics_velocity_stddev: ! 'Velocity standard deviation: %{value} points'
+  backlogs_statistics_velocity: ! 'Velocity: #{value}'
+  backlogs_statistics_velocity_stddev: ! 'Velocity standard deviation: #{value} points'
   backlogs_statistics_yield: Project has good average yield
   backlogs_statistics_yield_failed: Project has low average yield
   backlogs_story: Historia
@@ -66,7 +66,7 @@ es:
   error_release_end_after_start: Fecha del release final tiene que ser después de
     la fecha de inicio
   error_taken: ya se encuentra en uso
-  event_sprint_summary: ! '%{projecto}: %{resumen}'
+  event_sprint_summary: ! '#{projecto}: #{resumen}'
   field_assigned_to: Asignado a
   field_backlogs_issue_type: Tipo de backlog
   field_blocks: Bloques
@@ -88,10 +88,10 @@ es:
   field_velocity_based_estimate: Estimación basada en la velocidad
   label_back_to_project: Volver a la página del proyecto
   label_backlogs: Backlogs
-  label_backlogs_unconfigured: Usted no ha configurado Backlogs aún, Por favor dirijase
-    a %{administration} > %{plugins}, luego pulse en el enlace %{configure} para este
-    plugin. Una vez que haya configurado los valores, regrese a esta página para empezar
-    a usar esta herramienta.
+  label_backlogs_unconfigured: "Usted no ha configurado Backlogs aún, Por favor dirijase
+      a #{administration} > #{plugins}, luego pulse en el enlace #{configure} para este
+      plugin. Una vez que haya configurado los valores, regrese a esta página para empezar
+      a usar esta herramienta."
   label_burndown: Burndown
   label_chart_options: Opciones de gráfico
   label_close_completed_sprints: Cerrar Sprints completados
@@ -134,7 +134,7 @@ es:
   label_sprint_backlog: Backlog del sprint
   label_sprint_cards: Tarjetas del sprint
   label_sprint_impediments: Impedimentos del Sprint
-  label_sprint_name: Sprint "%{name}"
+  label_sprint_name: Sprint "#{name}"
   label_stories: Historias
   label_stories_tasks: Historias/Tareas
   label_task_board: Tablero de tareas
@@ -168,7 +168,7 @@ es:
     desea salvar la instantánea?
   today_not_in_release_warning: ! 'Advertencia: la fecha actual no se encuentra dentro
     del rango de fecha del release.'
-  todo_issue_summary: ! '%{type}: %{summary}'
+  todo_issue_summary: ! '#{type}: #{summary}'
   use_free_text_if_empty: Use un campo de texto en lugar de la lista desplegable si
     está vacío
   warning_reset_sprint: ! "¡Usted está a punto de reiniciar este SPRINT!\n\n¿Estás
