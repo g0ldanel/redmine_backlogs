@@ -11,6 +11,11 @@ module Backlogs
     end
 
     module InstanceMethods
+      def is_default?
+        #TO-DO change this to check real default statusses
+        self.position == 1 
+      end
+
       def backlog
         return :success if is_closed? && (default_done_ratio.nil? || default_done_ratio == 100)
         return :failure if is_closed?
